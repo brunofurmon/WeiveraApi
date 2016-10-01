@@ -28,7 +28,7 @@ module WeiveraApi
     config.api_only = true
 
     # Inserts rack_cors before any other middleware
-    config.middleware.insert_before 0, "Rack::Cors" do
+    config.middleware.insert_before 0, Rack::Cors do
         allow do
             origins '*'
             resource '*', :headers => :any, :methods => [:get, :post, :options]
